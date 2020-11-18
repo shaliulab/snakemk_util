@@ -8,12 +8,21 @@ requirements = [
 ]
 
 test_requirements = [
+    "pytest>=3.3.1",
+    "pytest-xdist",
+    "pytest-pep8",
+    "pytest-mock",
+    "pytest-cov",
 ]
 
+dev_requirements = [
+    "bumpversion",
+    "wheel",
+]
 
 setup(
     name='snakemk_util',
-    version='0.0.1',
+    version='0.2.1',
     description="utility functions for snakemake",
     author="Florian Hölzlwimmer",
     author_email='git.ich@frhoelzlwimmer.de',
@@ -22,11 +31,7 @@ setup(
     packages=find_packages(),
     install_requires=requirements,
     extras_require={
-        "develop": ["bumpversion",
-                    "wheel",
-                    "pytest",
-                    "pytest-pep8",
-                    "pytest-cov"],
+        "develop": dev_requirements,
     },
     license="MIT license",
     zip_safe=False,
